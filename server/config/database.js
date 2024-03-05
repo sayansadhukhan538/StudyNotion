@@ -8,5 +8,8 @@ exports.connect = () => {
       useUnifiedTopology: true,
     })
     .then(() => console.log("DB connected."))
-    .catch((error) => console.log("There is an error in DB connection", error));
+    .catch((error) => {
+      console.log("There is an error in DB connection", error);
+      process.exit(1);
+    });
 };
